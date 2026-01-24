@@ -37,11 +37,29 @@
         /* Philosophy Section */
         .philosophy { margin-bottom: 50px; font-size: 18px; font-weight: 500; }
 
-        /* Download Badges */
-        .badges { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 80px; }
-        .badges a img { height: 48px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); transition: transform 0.2s; }
-        .badges a:hover img { transform: scale(1.05); }
-
+       /* style 태그 내부의 .badges 관련 코드를 아래로 덮어씌우세요 */
+        .badges { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; /* 수직 중앙 정렬 */
+            gap: 10px; 
+            margin-bottom: 80px; 
+        }
+        
+        .badges a img { 
+            transition: transform 0.2s; 
+        }
+        
+        /* 애플 스토어 배지 높이 */
+        .badges a:first-child img {
+            height: 40px; 
+        }
+        
+        /* 구글 플레이 배지 높이 (자체 여백 때문에 더 크게 설정) */
+        .badges a:last-child img {
+            height: 60px; 
+            margin-top: -2px; /* 미세한 수직 위치 조정 */
+        }
         /* Legal Section */
         .legal-section { text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; margin-top: 100px; }
         .legal-section h2 { color: var(--accent); font-size: 24px; margin-top: 40px; }
@@ -56,7 +74,7 @@
 
 <div class="container">
     <header>
-        <img src="logo.png" alt="BeGold Logo" style="width: 120px; height: 120px; border-radius: 24px; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(255,176,32,0.3);">
+        <img src="logo.png" alt="BeGold Logo" style="width: 160px; height: 160px; margin-bottom: 20px;">
         <div class="logo">BeGold</div>
         <div class="tagline">Speak it. Become it.</div>
     </header>
