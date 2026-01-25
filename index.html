@@ -7,21 +7,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --accent: #FFB020; /* 앱의 주요 포인트 컬러 */
-            --bg: #000000;
+           --accent: #FFB020; /* BeGold Ritual Gold */
+            /* ✅ 앱의 그라데이션 컬러 매칭 */
+            --bg-start: #050608;
+            --bg-mid: #0B1220;
+            --bg-end: #071A17;
             --text: #ffffff;
             --muted: rgba(255, 255, 255, 0.6);
         }
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background-color: var(--bg);
+           font-family: 'Inter', sans-serif;
+            /* ✅ 너무 쌩블랙이 아닌, 앱과 동일한 깊이감 있는 그라데이션 적용 */
+            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%);
+            background-attachment: fixed;
             color: var(--text);
-            line-height: 1.6;
             margin: 0;
-            padding: 0;
             text-align: center;
         }
-        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 80px 20px; }
         
         /* Header & Logo */
         header { margin-bottom: 60px; }
@@ -32,33 +35,29 @@
             color: var(--accent); 
             margin-top: 10px; /* 로고 이미지와의 간격 */
             margin-bottom: 5px;
-        .tagline { font-family: 'Nanum+Myeongjo', serif; font-size: 20px; color: var(--muted); }
+        .tagline { font-family: 'Nanum+Myeongjo', serif; font-size: 18px; color: var(--muted); margin-bottom: 40px;}
 
         /* Philosophy Section */
         .philosophy { margin-bottom: 50px; font-size: 18px; font-weight: 500; }
 
-       /* style 태그 내부의 .badges 관련 코드를 아래로 덮어씌우세요 */
+         /* ✅ 배지 정렬 및 크기 최적화 */
         .badges { 
             display: flex; 
             justify-content: center; 
-            align-items: center; /* 수직 중앙 정렬 */
-            gap: 10px; 
-            margin-bottom: 80px; 
+            align-items: center; /* 수직 중앙 정렬 핵심 */
+            gap: 4px; 
+            margin: 60px 0 100px; 
         }
         
-        .badges a img { 
-            transition: transform 0.2s; 
+        .apple-badge img { 
+            height: 44px; /* 기존 40px에서 상향 */
+            display: block;
         }
         
-        /* 애플 스토어 배지 높이 */
-        .badges a:first-child img {
-            height: 40px; 
-        }
-        
-        /* 구글 플레이 배지 높이 (자체 여백 때문에 더 크게 설정) */
-        .badges a:last-child img {
-            height: 60px; 
-            margin-top: -2px; /* 미세한 수직 위치 조정 */
+        .google-badge img { 
+            height: 66px; /* 기존 60px에서 상향 (시각적 일치 유도) */
+            display: block;
+            margin-top: -1px;
         }
         /* Legal Section */
         .legal-section { text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; margin-top: 100px; }
