@@ -8,7 +8,6 @@
     <style>
         :root {
            --accent: #FFB020; /* BeGold Ritual Gold */
-            /* ✅ 앱의 그라데이션 컬러 매칭 */
             --bg-start: #050608;
             --bg-mid: #0B1220;
             --bg-end: #071A17;
@@ -17,7 +16,7 @@
         }
         body {
            font-family: 'Inter', sans-serif;
-            /* ✅ 너무 쌩블랙이 아닌, 앱과 동일한 깊이감 있는 그라데이션 적용 */
+            /* ✅ 앱과 동일한 그라데이션 적용 */
             background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%);
             background-attachment: fixed;
             color: var(--text);
@@ -26,49 +25,71 @@
         }
         .container { max-width: 800px; margin: 0 auto; padding: 80px 20px; }
         
-        /* Header & Logo */
         header { margin-bottom: 60px; }
-        .logo { 
-            font-size: 36px; 
-            font-weight: 900; 
-            letter-spacing: -1px; 
-            color: var(--accent); 
-            margin-top: 10px; /* 로고 이미지와의 간격 */
-            margin-bottom: 5px;
+
+        /* ✅ 로고 이미지 스타일 (오타 수정됨) */
         .logo-img {
             width: 140px;
             height: 140px;
             margin-bottom: 20px;
-            /* 별도의 테두리나 그림자 없이 깔끔하게 배치합니다 */
-        }        
-        .tagline { font-family: 'Nanum+Myeongjo', serif; font-size: 18px; color: var(--muted); margin-bottom: 40px;}
+            border-radius: 28px; /* 앱 아이콘 느낌을 위해 살짝 굴곡 추가 */
+        }
 
-        /* Philosophy Section */
-        .philosophy { margin-bottom: 50px; font-size: 18px; font-weight: 500; }
+        .logo-text { 
+            font-size: 42px; 
+            font-weight: 900; 
+            letter-spacing: -1px; 
+            color: var(--accent); 
+            margin: 0;
+        }
+        
+        .tagline { 
+            font-family: 'Nanum Myeongjo', serif; 
+            font-size: 18px; 
+            color: var(--muted); 
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
 
+        .philosophy { 
+            margin-bottom: 50px; 
+            font-size: 18px; 
+            font-weight: 500; 
+            line-height: 1.6;
+        }
+
+        /* ✅ 배지 세로 정렬 및 크기 최적화 */
         .badges { 
             display: flex; 
-            flex-direction: column; /* ✅ 가로가 아닌 세로로 배치 */
+            flex-direction: column; 
             align-items: center; 
-            gap: 12px; /* 배지 사이의 간격 */
+            gap: 15px; 
             margin: 40px 0 80px; 
         }
         
         .badges a img { 
-            height: 48px; /* ✅ 세로 배치 시에는 높이를 동일하게 맞춰도 무방합니다 */
+            height: 44px; /* 애플 배지 기준 높이 */
             width: auto;
             transition: transform 0.2s; 
         }
-        
-        /* 구글 배지의 실제 크기를 애플과 비슷하게 보이도록 미세 조정 */
+
+        /* 구글 배지는 이미지 자체 여백 때문에 약 1.5배 더 크게 설정해야 비슷해 보입니다 */
         .google-badge img { 
-            height: 52px !important; 
+            height: 64px !important; 
+            margin-top: -2px;
         }
-        /* Legal Section */
-        .legal-section { text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; margin-top: 100px; }
+
+        .legal-section { 
+            text-align: left; 
+            background: rgba(255,255,255,0.03); 
+            padding: 40px; 
+            border-radius: 24px; 
+            margin-top: 100px; 
+            border: 1px solid rgba(255,255,255,0.05);
+        }
         .legal-section h2 { color: var(--accent); font-size: 24px; margin-top: 40px; }
         .legal-section h3 { font-size: 18px; margin-top: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
-        .legal-section p, .legal-section li { color: var(--muted); font-size: 14px; }
+        .legal-section p, .legal-section li { color: var(--muted); font-size: 14px; line-height: 1.7; }
         
         footer { margin-top: 100px; padding-bottom: 50px; font-size: 12px; color: rgba(255,255,255,0.3); }
         hr { border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 60px 0; }
@@ -79,8 +100,8 @@
 <div class="container">
     <header>
         <img src="logo.jpg" alt="BeGold Logo" class="logo-img">
-        <h1 style="color: var(--accent); font-size: 42px; margin: 0;">BeGold</h1>
-        <p style="font-family: 'Nanum Myeongjo', serif; color: var(--muted);">Speak it. Become it.</p>
+        <h1 class="logo-text">BeGold</h1>
+        <p class="tagline">Speak it. Become it.</p>
     </header>
 
     <section class="philosophy">
@@ -104,7 +125,7 @@
         <p>Last updated: January 24, 2026</p>
         
         <h3>1. Service Nature</h3>
-        <p>Ritual provides a platform for recording and playing back personal affirmations to assist in subconscious re-engineering.</p>
+        <p>BeGold provides a platform for recording and playing back personal affirmations to assist in subconscious re-engineering.</p>
         
         <h3>2. Data Storage (No-Server Policy)</h3>
         <p><strong>This application operates without a central server.</strong> All user-generated content, including voice recordings and settings, is stored exclusively on your local device. We cannot recover any data if the app is deleted or your device is lost.</p>
@@ -117,7 +138,7 @@
         <h2 id="privacy">Privacy Policy</h2>
         
         <h3>1. Data Collection</h3>
-        <p>Ritual does not collect, store, or transmit any personal identification information (PII) to any external server. Your data stays on your device.</p>
+        <p>BeGold does not collect, store, or transmit any personal identification information (PII) to any external server. Your data stays on your device.</p>
         
         <h3>2. Permissions</h3>
         <ul>
@@ -130,7 +151,7 @@
     </div>
 
     <footer>
-        &copy; 2026 Ritual. All rights reserved.
+        &copy; 2026 BeGold. All rights reserved.
     </footer>
 </div>
 
