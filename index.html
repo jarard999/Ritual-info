@@ -40,24 +40,23 @@
         /* Philosophy Section */
         .philosophy { margin-bottom: 50px; font-size: 18px; font-weight: 500; }
 
-         /* ✅ 배지 정렬 및 크기 최적화 */
         .badges { 
             display: flex; 
-            justify-content: center; 
-            align-items: center; /* 수직 중앙 정렬 핵심 */
-            gap: 4px; 
-            margin: 60px 0 100px; 
+            flex-direction: column; /* ✅ 가로가 아닌 세로로 배치 */
+            align-items: center; 
+            gap: 12px; /* 배지 사이의 간격 */
+            margin: 40px 0 80px; 
         }
         
-        .apple-badge img { 
-            height: 44px; /* 기존 40px에서 상향 */
-            display: block;
+        .badges a img { 
+            height: 48px; /* ✅ 세로 배치 시에는 높이를 동일하게 맞춰도 무방합니다 */
+            width: auto;
+            transition: transform 0.2s; 
         }
         
+        /* 구글 배지의 실제 크기를 애플과 비슷하게 보이도록 미세 조정 */
         .google-badge img { 
-            height: 66px; /* 기존 60px에서 상향 (시각적 일치 유도) */
-            display: block;
-            margin-top: -1px;
+            height: 52px !important; 
         }
         /* Legal Section */
         .legal-section { text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; margin-top: 100px; }
